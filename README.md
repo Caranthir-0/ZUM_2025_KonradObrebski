@@ -87,7 +87,7 @@ Projekt pozwala odpowiedzieć na pytanie, **które podejście NLP najlepiej spra
 ---
 
 ### **6.3 Model transformerowy (fine-tuning)**
-- **Nazwa modelu:** DistilBERT (`distilbert-base-uncased`)  
+- **Nazwa modelu:** DistilBERT 
 - **Zastosowana biblioteka:** HuggingFace Transformers  
 - **Zakres dostosowania:**  
   Fine-tuning całego modelu na zadaniu klasyfikacji binarnej  
