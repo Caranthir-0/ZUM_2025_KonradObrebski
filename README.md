@@ -108,7 +108,7 @@ Projekt pozwala odpowiedzieć na pytanie, **które podejście NLP najlepiej spra
 | Model | Metryka główna | Wynik | Uwagi |
 |--------|----------------|--------|--------|
 | Klasyczny ML | Macro F1 | 0.9395 | Bardzo silny baseline |
-| Sieć neuronowa | Macro F1 | 0.91275 | Gorsza generalizacja |
+| Sieć neuronowa | Macro F1 | 0.9127 | Gorsza generalizacja |
 | Transformer | Macro F1 | **0.9597** | Najlepszy recall spam |
 
 **Wizualizacje:**  
