@@ -1,0 +1,7 @@
+model,accuracy,precision_spam,recall_spam,f1_spam,macro_f1
+DistilBERT (fine-tuned),0.991928,0.979452,0.959732,0.969492,0.98242
+TF-IDF(char_wb) + LinearSVC,0.991928,1.0,0.939597,0.968858,0.982111
+TF-IDF(char_wb) + LogisticRegression,0.990135,0.992857,0.932886,0.961938,0.978135
+TF-IDF(word) + LinearSVC,0.988341,0.978873,0.932886,0.955326,0.974311
+TF-IDF(word) + LogisticRegression,0.98296,0.945205,0.926174,0.935593,0.962887
+BiLSTM (Embedding),0.98296,0.951389,0.919463,0.935154,0.962672
