@@ -8,7 +8,7 @@
 Konrad Obrębski
 
 **Kierunek, rok i tryb studiów:**  
-Informatyka, semestr V  
+Informatyka, semestr V, zaocznie
 
 **Data oddania projektu:**  
 13.01.2026
@@ -37,7 +37,7 @@ UCI Machine Learning Repository
 - licencja: **do użytku akademickiego (research/education use)**  
 
 **Uwagi:**  
-- dane zostały wstępnie oczyszczone (normalizacja tekstu, usunięcie nadmiarowych białych znaków),  
+- dane zostały wstępnie oczyszczone (normalizacja tekstu, usunięcie nadmiarowych białych znaków, usunięcie stop words),  
 - nie zawierają brakujących wartości,  
 - zbiór jest niezbalansowany (klasa spam stanowi mniejszość).
 
@@ -57,11 +57,11 @@ Projekt pozwala odpowiedzieć na pytanie, **które podejście NLP najlepiej spra
 
 | Etap | Nazwa pliku | Opis |
 |------|--------------|------|
-| 1 | `EDA.ipynb` | Analiza danych, wizualizacje, wnioski |
-| 2 | `Baseline_TFIDF.ipynb` | Preprocessing, TF-IDF, modele klasyczne |
-| 3 | `NN_From_Scratch.ipynb` | Sieć neuronowa uczona od zera (BiLSTM) |
-| 4 | `Transformer_DistilBERT.ipynb` | Fine-tuning modelu transformerowego |
-| 5 | `Summary_Comparison.ipynb` | Porównanie modeli i wizualizacja wyników |
+| 1 | `eda_feature_eng.ipynb` | Analiza danych, wizualizacje, preprocesing, wnioski |
+| 2 | `classicML_baseline.ipynb` | Preprocessing, TF-IDF, modele klasyczne |
+| 3 | `nn_from_scratch.ipynb` | Sieć neuronowa uczona od zera (BiLSTM) |
+| 4 | `transformer.ipynb` | Fine-tuning modelu transformerowego |
+| 5 | `evaluation.ipynb` | Porównanie modeli i wizualizacja wyników |
 
 ---
 
@@ -71,9 +71,6 @@ Projekt pozwala odpowiedzieć na pytanie, **które podejście NLP najlepiej spra
 - **Algorytm:** TF-IDF (char n-grams) + LinearSVC  
 - **Krótki opis działania:**  
   Tekst reprezentowany jest jako wektor TF-IDF oparty na sekwencjach znaków, a następnie klasyfikowany za pomocą liniowego SVM.  
-- **Wyniki / metryki:**  
-  - Accuracy: **0.9919**  
-  - Macro F1: **0.9821**  
 
 ---
 
@@ -86,9 +83,6 @@ Projekt pozwala odpowiedzieć na pytanie, **które podejście NLP najlepiej spra
 - **Funkcje aktywacji i optymalizator:**  
   - ReLU, Sigmoid  
   - Adam  
-- **Wyniki:**  
-  - Accuracy: **0.9830**  
-  - Macro F1: **0.9627**
 
 ---
 
@@ -97,10 +91,7 @@ Projekt pozwala odpowiedzieć na pytanie, **które podejście NLP najlepiej spra
 - **Zastosowana biblioteka:** HuggingFace Transformers  
 - **Zakres dostosowania:**  
   Fine-tuning całego modelu na zadaniu klasyfikacji binarnej  
-- **Wyniki:**  
-  - Accuracy: **0.9919**  
-  - Macro F1: **0.9824**  
-  - Recall (spam): **0.9597**
+
 
 ---
 
@@ -116,9 +107,9 @@ Projekt pozwala odpowiedzieć na pytanie, **które podejście NLP najlepiej spra
 
 | Model | Metryka główna | Wynik | Uwagi |
 |--------|----------------|--------|--------|
-| Klasyczny ML | Macro F1 | 0.9821 | Bardzo silny baseline |
-| Sieć neuronowa | Macro F1 | 0.9627 | Gorsza generalizacja |
-| Transformer | Macro F1 | **0.9824** | Najlepszy recall spam |
+| Klasyczny ML | Macro F1 | 0.9395 | Bardzo silny baseline |
+| Sieć neuronowa | Macro F1 | 0.912752 | Gorsza generalizacja |
+| Transformer | Macro F1 | **0.9597** | Najlepszy recall spam |
 
 **Wizualizacje:**  
 - Macierze pomyłek  
@@ -129,10 +120,12 @@ Projekt pozwala odpowiedzieć na pytanie, **które podejście NLP najlepiej spra
 
 ## **8. Wnioski i podsumowanie**
 - Najlepsze wyniki uzyskał **model transformerowy (DistilBERT)**.  
+- Warto zostawić treści wiadomości mało wyczyszczonej formie, bo możemy utracić ważne cechy dla klasyfikacji
 - Klasyczny model TF-IDF + SVM okazał się bardzo skuteczny dla krótkich tekstów.  
 - Sieć neuronowa trenowana od zera była gorsza z powodu małego zbioru danych i braku pretrainingu.  
 - Projekt pokazuje, że **modele wstępnie uczone są najbardziej uniwersalne w zadaniach NLP**.  
-- System może być wykorzystany w filtrach anty-phishingowych SMS lub e-mail.
+- System może być wykorzystany w filtrach anty-phishingowych SMS.
+- Warto zbadać jak modele nauczone na treści SMSowej radzą sobie z treścią mailową.
 
 ---
 
@@ -142,13 +135,14 @@ ZUM_2025_KonradObrebski/
 │
 ├── data/
 │ ├── raw/
+│ ├── sample/
 │ └── processed/
 ├── notebooks/
 │ ├── eda_feature_eng.ipynb
 │ ├── classicML_baseline.ipynb
 │ ├── NN_From_Scratch.ipynb
 │ ├── Transformer.ipynb
-│ └── Summary_Comparison.ipynb
+│ └── Evaluation.ipynb
 ├── reports/
 ├── models/
 ├── README.md

@@ -1,3 +1,6 @@
 
 # Ignore raw dataset files
 data/raw/
+
+# Ignore raw dataset files
+data/processed/

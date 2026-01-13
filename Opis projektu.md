@@ -135,7 +135,7 @@ projekt_zum_2025/
 │ ├── 3_Models_Training.ipynb
 │ └── 4_Evaluation.ipynb
 ├── models/
-├── results/
+├── reports/
 ├── README.md
 └── requirements.txt
 ```
