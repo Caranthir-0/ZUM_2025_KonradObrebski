@@ -4,3 +4,14 @@ data/raw/
 
 # Ignore raw dataset files
 data/processed/
+
+# Ignore model checkpoints and weights
+models/
+**/models/
+checkpoint*
+**/checkpoint*
+*.pt
+*.bin
+*.ckpt
+*.h5
+*.keras
